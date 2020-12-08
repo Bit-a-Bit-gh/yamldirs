@@ -101,7 +101,7 @@ class Filemaker(FilemakerBase):
         super(Filemaker, self).__init__(root, fdef)
 
     def mkdir(self, dirname):
-        os.mkdir(dirname)
+        os.makedirs(dirname, exist_ok=True)
 
     def pushd(self, dirname):
         dirname = os.path.abspath(dirname)
